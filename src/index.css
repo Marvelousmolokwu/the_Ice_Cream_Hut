@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Grandstander:wght@200;300;400&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-gradient-to-b from-white to-pink bg-no-repeat overflow-x-hidden font-grand;
+  }
+}
+@layer utilities {
+  .lists {
+    @apply delay-500 active:before:font-bold active:before:content-['>'] active:before:-top-2 active:before:mr-2 active:before:relative active:before:scale-x-[0.8] active:before:scale-y-[1] hover:font-bold hover:before:content-['>'] hover:before:-top-2 hover:before:mr-2 hover:before:relative hover:before:scale-x-[0.8] hover:before:scale-y-[1];
+  }
+}
