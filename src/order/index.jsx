@@ -1,8 +1,8 @@
 const Order = ({ iceCream }) => {
   return (
     <>
-      <section className="h-screen flex  items-center flex-col lg:max-w-[90%] mx-auto    bg-iceCream3  bg-contain bg-no-repeat ">
-        <h2 className="font-bold text-xl sm:text-3xl lg:text-4xl mt-[20vh] px-10">
+      <section className="h-screen flex  items-center flex-col lg:max-w-[90%] mx-auto    bg-iceCream3  bg-contain bg-no-repeat px-10 ">
+        <h2 className="font-bold text-xl sm:text-3xl lg:text-4xl mt-[20vh] ">
           Thank you for your Order! :)
         </h2>
         <p className="text-lg sm:text-2xl">
