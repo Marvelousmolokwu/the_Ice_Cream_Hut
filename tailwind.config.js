@@ -19,7 +19,8 @@ export default {
         iceCream: 'url("/src/assets/icons8-13-70.png")',
         iceCream2: 'url("/src/assets/ice-cream.png")',
 
-        iceCream3: 'url("/src/assets/ice-cream (1).png")',
+        iceCream3:
+          'url("https://res.cloudinary.com/ddgyd8szc/image/upload/v1686588606/ice-cream_1_ok3x4l.png")',
       },
     },
   },

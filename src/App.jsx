@@ -1,13 +1,16 @@
 import Header from "./components/Header";
 import Home from "./components/home";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Toppings from "./components/toppings";
 import Order from "./order";
 import Base from "./components/base";
 import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import Modal from "./components/modal";
 
 function App() {
   const [iceCream, setIceCream] = useState({ base: "", topping: [] });
+  const [showModal, setShowmodal] = useState(false);
 
   const addBase = (base) => {
     setIceCream({ ...iceCream, base });
@@ -23,11 +26,13 @@ function App() {
 
     setIceCream({ ...iceCream, topping: newToppings });
   };
+  const location = useLocation();
   return (
     <>
-      <BrowserRouter>
-        <Header />
-        <Routes>
+      <Header />
+      <Modal showModal={showModal} setShowmodal={setShowmodal} />
+      <AnimatePresence onExitComplete={() => setShowmodal(false)}>
+        <Routes location={location} key={location.key}>
           <Route path="/" element={<Home />}></Route>
           <Route
             path="/base"
@@ -37,9 +42,12 @@ function App() {
             path="/toppings"
             element={<Toppings addTopping={addTopping} iceCream={iceCream} />}
           ></Route>
-          <Route path="/order" element={<Order iceCream={iceCream} />}></Route>
+          <Route
+            path="/order"
+            element={<Order iceCream={iceCream} setShowmodal={setShowmodal} />}
+          ></Route>
         </Routes>
-      </BrowserRouter>
+      </AnimatePresence>
     </>
   );
 }

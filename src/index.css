@@ -9,7 +9,17 @@
   }
 }
 @layer utilities {
-  .lists {
-    @apply delay-500 active:before:font-bold active:before:content-['>'] active:before:-top-2 active:before:mr-2 active:before:relative active:before:scale-x-[0.8] active:before:scale-y-[1] hover:font-bold hover:before:content-['>'] hover:before:-top-2 hover:before:mr-2 hover:before:relative hover:before:scale-x-[0.8] hover:before:scale-y-[1];
+  li span.active {
+    font-weight: bold;
+  }
+}
+@layer utilities {
+  li span.active::before {
+    content: ">";
+    position: relative;
+    top: -2px;
+    margin-right: 6px;
+    transform: scale(0.8, 1);
+    display: inline-block;
   }
 }
